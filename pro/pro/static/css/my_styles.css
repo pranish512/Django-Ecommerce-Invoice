@@ -1,0 +1,111 @@
+#bodyID{
+    background: linear-gradient( to top left /* 160deg to bottom */, rgba(0, 0, 0, 0.616) 100%, rgba(0, 0, 0, 0.616) 59%, rgba(0, 0, 0, 0.65) 100%), url('billing.jpg');
+    background-size: 100% 100%;
+    overflow-x: hidden;
+}
+
+/*  START  */ 
+#divAddCustomer{
+    float: left;
+    position: 0px 10px;
+} 
+
+#divAddProduct{
+    position: relative;
+    bottom: 65%;
+    right: 1%;
+    width: 25%;
+} 
+
+#divTableDetails{
+    position: relative;
+    bottom: 100%;
+    left: -3%;
+    width: 58rem;
+    height: 30%;
+}
+
+#divHeader{
+    position: relative;
+    top: 15%;
+    width: 100rem;
+    left: -2%;
+}
+
+#divAddUnit1{
+    position: relative;
+    margin-right: -16em;
+    margin-top: -22.5rem;
+}
+
+#divOrderNumber{
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
+
+
+ 
+/* END */
+
+#tableProdUnit{
+    position: relative;
+    width: 40rem;
+    margin-left: 15rem;
+    /* margin-top: -21rem; */
+    margin-top: -8rem;
+}
+
+#tableUnit{
+    position: relative;
+    width: 30rem;
+    margin-left: 45rem;
+    /* margin-top: 44rem; */
+}
+
+#tableCutomerDetails{
+    position: relative;
+    width: 40rem;
+    margin-left: 27rem;
+    margin-top: -26rem;   
+}
+
+tbody {
+    max-height:10rem;
+    display: sticky;
+    height: 10rem;
+    overflow: auto;
+}
+
+.shado{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgb(12, 13, 27);
+}
+
+.container-bg{
+    background: linear-gradient( 140deg, rgb(21, 21, 32), #1719ac);
+    box-shadow: 5px 5px 20px black ;
+}
+
+.bg-success{
+    background: rgb(0, 148, 32);
+}
+
+.error_msgs{
+    color: rgb(241, 44, 44);
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 20px;
+}
+
+/* .sub-menu{
+    display: none;
+} */
+
+/* #sidebarDDbtn:hover .sub-menu{
+    display: block;
+}
+
+.dropDownLI:hover .sub-menu{
+    display: block;
+} */

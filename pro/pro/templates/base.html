@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    {% include 'header.html' %}
+</head>
+
+<body id="bodyID" onload="return loaddate()">
+    <div class="wrapper pt-5 d-flex align-items-stretch">
+        
+        {% include 'sidenavbar.html' %}
+        <div id="content" class="p-4 p-md-5">
+            
+            {% include 'navbar.html' %}
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+{% include 'footer.html' %}
+
+</html>
+
+

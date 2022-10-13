@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'message.html' %}
+
+
+<div class="row">
+    <div id="divAddProduct1" style="margin-left:-15rem;" class="mt-n3  container-fluid justify-content-start">
+        <form method="POST" id="formAddProduct" action="{% url 'addProdUnit' %}">
+            {% csrf_token %}
+            <div class="col-sm-4 my-4 p-4 rounded container-fluid justify-content-center bg-dark text-white">
+
+                <h2 class="text-center mb-3 text-light">Add Product</h2>
+
+                <div class="form-outline col-xs-8">
+                    <label class="form-label" for="txtProductName">Product Name</label>
+                    <input type="text" class="form-control" id="txtProductName" value="{{input_data.tax_code}}"
+                        name="txtProductName" />
+                    <div id="divErrorCode" class="error_msgs"><b>{{error.tax_code|join:""}}</b></div>
+                </div>
+
+                <input type="hidden" name="hiddenAddProd" id="hiddenAddProd" value="addProd1">
+
+                <div class="form-outline mt-3 col-xs-8">
+                    <label class="form-label" for="txtPrice">Price</label>
+                    <input type="text" class="form-control" id="txtPrice" value="{{input_data.tax_code}}"
+                        name="txtPrice" />
+                    <div id="divErrorCode" class="error_msgs"><b>{{error.tax_code|join:""}}</b></div>
+                </div>
+                <div class=" mt-3 form-outline text-center  ">
+                    <button type="submit" id="btnProductSave" class="btn btn-success"> Save </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="divAddUnit" style="margin-left: 16rem; margin-top: -23rem; "
+        class=" container-fluid justify-content-start">
+        <form method="POST" id="formAddUnit" action="{% url 'addProdUnit' %}">
+            {% csrf_token %}
+            <div class="col-sm-4 my-4 p-4 rounded container-fluid justify-content-center bg-dark text-white">
+
+                <h2 class="text-center mb-3 text-light">Add Unit</h2>
+
+                <div class="form-outline mt-3 col-xs-8">
+                    <label class="form-label" for="ddlProductName">Product Name</label>
+                    <select class="form-control" name="ddlProductName" id="ddlProductName">
+                        <option selected>--Select Prdoduct--</option>
+                        {% for value in product_name %}
+                        <option value="{{value.product_id}}">{{ value.product_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div id="divErrorUnit" class="error_msgs"><b>{{error.name|join:""}}</b></div>
+                </div>
+
+                <input type="hidden" name="hiddenAddUnit" id="hiddenAddUnit" value="addUnit1">
+
+                <div class="form-outline mt-4 col-xs-8">
+                    <label class="form-label" for="txtUnit">Unit</label>
+                    <input type="text" class="form-control" id="txtUnit" value="{{input_data.tax_code}}"
+                        name="txtUnit" />
+                    <div id="divErrorProductName" class="error_msgs"><b>{{error.tax_code|join:""}}</b></div>
+                </div>
+
+                <div class=" mt-3 form-outline text-center  ">
+                    <button type="submit" id="btnUnitSave" class="btn btn-success"> Save </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

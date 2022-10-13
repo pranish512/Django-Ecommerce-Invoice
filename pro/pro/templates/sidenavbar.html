@@ -1,0 +1,38 @@
+{% load static %}
+<nav id="sidebar" class="active pt-4">
+    <h1><a href="index.html" class="logo">Bb.</a></h1>
+    <!-- <img class="rounded-circle article-img" src="{% static 'images/Joseph.jpg' %}" ></h1>  {{ request.user.profile.image.url }}  -->
+    <ul class="list-unstyled components mb-5">
+        <li class="active">
+            <a href="#"><span class="fa fa-home"></span> Home</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-user"></span> About</a>
+        </li>
+        <li class="dropDownLI">
+            <a onclick="sideBarDD()" id="sidebarDDbtn"><span class="fa fa-database"></span> <ins>Master Details</ins> <i class="fa fa-caret-down"></i></a>
+            <ul style="display: None;" id="sub-menu" class="sub-menu">
+                <a href="{% url 'addcustomer' %}"> <i class="fa-solid fa-user-plus"></i> <small>Add Customer</small></a>
+                <a href="{% url 'addProdUnit' %}"> <i class="fa fa-cart-plus"></i> <small> Add Product</small></a>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-sticky-note"></span> Blog</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-cogs"></span> Services</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+        </li>
+    </ul>
+
+    <!-- <div class="footer">
+        <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+            with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                target="_blank">Colorlib.com</a>
+        </p>
+    </div> -->
+</nav>

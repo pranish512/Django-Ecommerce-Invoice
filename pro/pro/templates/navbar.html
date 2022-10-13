@@ -1,0 +1,36 @@
+<nav class="p-2 px-3 navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <button type="button" id="sidebarCollapse" class=" btn btnn btnn-primary">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+    </button>&nbsp;&nbsp;&nbsp;
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#"><b>Billing System</b></a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'orderlist' %}">Order List</a>
+        </li>
+        <li>
+            <a onclick="sideBarDD11()" id="sidebarDDbtn"><span class="fa fa-database"></span> <ins>Master Details</ins> <i
+                    class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="dropDownLI"> <!-- style="display: None;" -->
+            <ul id="sub-menu" class="sub-menu">
+                <a href="{% url 'addcustomer' %}"> <i class="fa-solid fa-user-plus"></i> <small>Add Customer</small></a>
+                <a href="{% url 'addProdUnit' %}"> <i class="fa fa-cart-plus"></i> <small> Add Product</small></a>
+            </ul>
+        </li>
+    </ul>
+
+</nav>

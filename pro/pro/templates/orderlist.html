@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'message.html' %}
+<!-- ORDER-LIST TABLE $$$$$$$$$$$ -->
+<h2 class="text-light text-center">Order List Table</h2>
+<div class="">
+    <label id="updateRow" style="display: none"></label>
+    <table class="table mt-4 text-dark" style="border:5px solid rgb(253, 251, 251);"
+        width="100%;" id="tableAddProduct">
+        <thead class="table-dark rounded">
+            <tr class="">
+                <th class="mx-3">S.No</th>
+                <th class="mx-3">Order Number</th>
+                <th class="mx-3">Order Date</th>
+                <th class="mx-5">Customer name</th>
+                <th class="mx-3">Description</th>
+                <th class="mx-3">Total Amount</th>
+                <th class="mx-3">Edit</th>
+                <th class="mx-3">Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-striped bg-dark bg-opacity-50 text-dark">
+
+            {% for value in order_list %}
+            <tr class="container-fluid text-light justify-content-md-center">
+                <td class="p-3">{{ forloop.counter }}{{endfor}}</td>
+                <td class="p-3">{{value.order_no}}</td>
+                <td class="p-3">{{value.order_date}}</td>
+                {% for keys in value.customer_name %}
+                <td class="p-3">{{keys.cus_name}}</td>
+                {% endfor %}
+                <td class="p-3">{{value.description}}</td>
+                <td class="p-3">{{value.total_amount}}</td>
+                <form method="POST" action="{% url 'orderupdate' value.order_id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="hiddenPostEdit" id="hiddenPostEdit" value="editOrder1">
+                    <td class="p-3"><button type="submit" class="fa fa-pencil-square-o btn btn-success"></button>
+                    </td>
+                </form>
+                <td class="p-3"><a type="button" href="{% url 'deleteorderlist' value.order_id  %}"
+                        class="fa fa-trash-o btn btn-danger"
+                        onclick="return confirm('Are you sure, you delete {{value.order_no}} data?')"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
